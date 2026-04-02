@@ -24,6 +24,9 @@ export function buildEnvVars(env: OpenClawEnv): Record<string, string> {
   if (env.ANTHROPIC_API_KEY) envVars.ANTHROPIC_API_KEY = env.ANTHROPIC_API_KEY;
   if (env.OPENAI_API_KEY) envVars.OPENAI_API_KEY = env.OPENAI_API_KEY;
 
+  // Claude Code setup-token (subscription auth)
+  if (env.CLAUDE_SETUP_TOKEN) envVars.CLAUDE_SETUP_TOKEN = env.CLAUDE_SETUP_TOKEN;
+
   // Legacy AI Gateway support: AI_GATEWAY_BASE_URL + AI_GATEWAY_API_KEY
   // When set, these override direct keys for backward compatibility
   if (env.AI_GATEWAY_API_KEY && env.AI_GATEWAY_BASE_URL) {
